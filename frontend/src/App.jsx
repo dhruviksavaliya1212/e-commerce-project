@@ -9,7 +9,7 @@ import Desc from "./components/Desc/Desc";
 import Cart from "./Pages/Cart";
 import Search from "./Pages/Search";
 import Footer from './components/Footer/Footer'
-export const url = "http://localhost:4000";
+export const url = "https://e-commerce-project-backend-85sa.onrender.com";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios'
