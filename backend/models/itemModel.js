@@ -1,0 +1,84 @@
+import mongoose from "mongoose";
+
+const itemSchema = new mongoose.Schema({
+  name:{ 
+    type:String, 
+    required:true
+  },
+  type:{ 
+    type:String, 
+    required:true
+  },
+  description:{
+    type:String, 
+    required:true
+  },
+  oldprice:{
+    type:Number,
+    required:true
+  },
+  newprice:{
+    type:Number,
+    required:true
+  },
+  percentage:{ 
+    type:String, 
+    required:true
+  },
+  color:{ 
+    type:String, 
+    required:true
+  },
+  brand:{ 
+    type:String, 
+    required:true
+  },
+  size:{ 
+    type:String,
+    required:false
+  },
+  os:{ 
+    type:String,
+    required:false
+  },
+  cpu:{ 
+    type:String,
+    required:false
+  },
+  screensize:{ 
+    type:String,
+    required:false
+  },
+  display:{ 
+    type:String,
+    required:false
+  },
+  resolution:{ 
+    type:String,
+    required:false
+  },
+  refreshrate:{ 
+    type:String,
+    required:false
+  },
+  earplacement:{ 
+    type:String,
+    required:false
+  },
+  formfactor:{ 
+    type:String,
+    required:false
+  },
+  image:{
+    type:String, 
+    required:true
+  },
+  category:{
+    type:String, 
+    required:true
+  },
+});
+
+const itemModel = mongoose.models.item || mongoose.model("item",itemSchema)
+
+export default itemModel;

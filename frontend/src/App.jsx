@@ -1,0 +1,97 @@
+import React, { useEffect, useState } from "react";
+import "../src/App.css";
+import Navbar from "./components/Navbar/Navbar";
+import Home from "./Pages/Home";
+import { Route, Routes } from "react-router-dom";
+import Login from "./Pages/Login";
+import Register from "./Pages/Register";
+import Desc from "./components/Desc/Desc";
+import Cart from "./Pages/Cart";
+import Search from "./Pages/Search";
+import Footer from './components/Footer/Footer'
+export const url = "http://localhost:4000";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios'
+
+
+const App = () => {
+
+  const [cartItem, setCartItem] = useState({});
+  const [itemsData, setItemsData] = useState([]);
+  const [token,setToken] = useState("")
+  const [item_list, setItem_list] = useState([]);
+
+  const addToCart = async(itemId) => {
+    if (!cartItem[itemId]) {
+      setCartItem((prev) => ({ ...prev, [itemId]: 1 }));
+    } else {
+      setCartItem((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
+    }
+    if(token){
+      await axios.post(url+"/api/cart/add",{itemId},{headers:{token}})
+    }
+  };
+
+  const removeFromCart = async(itemId) => {
+    if (cartItem[itemId]) {
+      setCartItem((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
+    }
+    if(token){
+      await axios.post(url+"/api/cart/remove",{itemId},{headers:{token}})
+    }
+  };
+
+  const getTotalCartAmount = () => {
+    let totalAmount = 0;
+    for (const item in cartItem) {
+      let itemInfo = item_list.find((product) => product._id === item);
+      console.log(itemInfo)
+      // console.log(item)
+      // console.log(cartItem[item])
+      totalAmount += itemInfo.newprice * cartItem[item];
+    }
+    return totalAmount;
+  };
+
+  const fetchFood_list = async ( ) => {
+    const response = await axios.get (url+"/api/item/list");
+    setItem_list(response.data.data);
+  }
+
+  const loadCartData = async (token) => {
+    const response = await axios.post(url+"/api/cart/get",{},{headers:{token}});
+    setCartItem(response.data.cartData);
+  }
+
+  useEffect(()=>{
+    async function loadData(){
+      await fetchFood_list();
+      if(localStorage.getItem("token")){
+        setToken(localStorage.getItem("token"));
+        await loadCartData(localStorage.getItem("token"));
+      }
+    }
+    loadData();
+  },[]);
+
+  return (
+    <div className=" h-full w-full flex font-['poppins'] flex-col justify-center items-center">
+      <div className=" h-full w-[95%] ">
+        <ToastContainer/>
+        <Navbar token={token} setToken={setToken} />
+      </div>
+      <Routes>
+        <Route path="/" element={<Home  item_list={item_list} url={url}/>}></Route>
+        <Route path="/login" element={<Login url={url} setToken={setToken} />}></Route>
+        <Route path="/register" element={<Register url={url} setToken={setToken}/>} />
+        <Route path="/cart" element={<Cart removeFromCart={removeFromCart} cartItem={cartItem}  itemsData={itemsData} getTotalCartAmount={getTotalCartAmount} item_list={item_list} url={url} loadCartData={loadCartData} />} />
+        <Route path="/search" element={<Search />} />
+        <Route path="/description/:id" element={<Desc addToCart={addToCart} removeFromCart={removeFromCart} cartItem={cartItem} itemsData={itemsData} setItemsData={setItemsData} url={url} item_list={item_list}/>}/>
+      </Routes>
+      <Footer/>
+    </div>
+  );
+};
+
+export default App;

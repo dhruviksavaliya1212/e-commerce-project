@@ -1,0 +1,128 @@
+import mobile3 from '../assets/mobile3.webp'
+import mobile4 from '../assets/mobile4.webp'
+import mobile5 from '../assets/mobile5.webp'
+import mobile6 from '../assets/mobile6.webp'
+import laptop3 from '../assets/laptop3.jpg'
+import laptop4 from '../assets/laptop4.webp'
+
+
+export const assets = [
+  {
+    id:0,
+    img:mobile3,
+    name:"Samsung Galaxy S24 Ultra 5G",
+    type:"Titanium Black, 12GB, 512GB Storage",
+    oldprice:145999,
+    newprice:139999,
+    percentage:"-4%",
+    colors:"violet, grey, balck",
+    size:"12GB + 512GB",
+    brand:"Samsung",
+    os:"Android 14",
+    cpu:"Snapdragon",
+    category:"mobile",
+    description:"Meet Galaxy S24 Ultra, the ultimate form of Galaxy Ultra with a new titanium exterior and a 17.25cm (6.8') flat display. It's an absolute marvel of design.With the most megapixels on a smartphone and AI processing, Galaxy S24 Ultra sets the industry standard for image quality every time you hit the shutter. What's more, the new ProVisual engine recognizes objects — improving colour tone, reducing noise and bringing out detail.Victory can be yours with the new Snapdragon 8 Gen 3 for Galaxy. Faster processing gives you the power you need for all the gameplay you want. Then, manifest graphic effects in real time with ray tracing for hyper-realistic shadows and reflections."
+  },
+  {
+    id:1,
+    img:mobile4,
+    name:"Redmi 13 5G ",
+    type:"Black Diamond 6GB, 128GB Storage",
+    oldprice:17999,
+    newprice:13999,
+    percentage:"-22%",
+    colors:"orchid pink, hawaiian blue, balck diamond",
+    size:"6GB + 128GB",
+    brand:"Redmi",
+    os:"Android 14, Xiaomi HyperOS",
+    cpu:"Snapdragon",
+    category:"mobile",
+    description:"Display: Large 17.24cm FHD+ 120Hz AdaptiveSync display with Corning Gorilla Glass 3 Protection, TÜV Rheinland low blue light, TÜV flicker-free, TÜV Circadian Friendly, Wet finger touch displa Processor: Qualcomm Snapdragon 4 Gen2 Accelerated Edition Octa-core processor for high performance ; Up to 2.3GHz; Android 14 with Xiaomi HyperOS, Upto 12GB RAM including 6GB Virtual RAM Camera: 108MP f/1.75 Dual camera with 3X In-Sensor Zoom, classic film filters, Portrait, Night Mode,HDR, 10"
+  },
+  {
+    id:2,
+    img:mobile5,
+    name:"Realme NARZO 70x 5G ",
+    type:"Forest Green, 6GB RAM,128GB Storage",
+    oldprice:17999,
+    newprice:13498,
+    percentage:"-25%",
+    colors:"forest green, blue",
+    size:"6GB + 128GB",
+    brand:"Realme",
+    os:"Android 14",
+    cpu:"Snapdragon",
+    category:"mobile",
+    description:"45W SUPERVOOC Charge provide Charges up to 50% in 31 mins. 5000mAh Massive Battery provide upto 26 days Standby or up to 35 hours Music.Fully loaded 120Hz Ultra Smooth Display, Screen-to-body ratio: 91.40% Resolution ratio: FHD+ 1080*2400 PPI:391PPI,Touch Sampling Rate: 240Hz.7.69 mm Ultra-slim ,188g Light Body,The ultra-thin and lightweightbody, combined with a width of 7.97cm, allows for comfortable single-handed grip even during extended periods of use; IP54 Dust and Water Resistance.50MP Primary Camera and Dual Stereo Speakers."
+  },
+  {
+    id:3,
+    img:laptop3,
+    name:"ASUS Vivobook 14 ",
+    type:"Silver 512GB SSD ",
+    oldprice:56990,
+    newprice:37990,
+    percentage:"-33%",
+    colors:"Silver, 14inch",
+    size:"8GB + 512GB SSD",
+    brand:"Asus",
+    os:"Window 11",
+    cpu:"IntelCore i3-1215U 12th Gen",
+    category:"laptop",
+    description:"IntelCore i3-1215U Processor 1.2 GHz (10M Cache, up to 4.4 GHz, 6 cores). 8GB DDR4 3200MHz on board with 512GB M.2 NVMe PCIe 4.0 SSD.Windows 11 Home with lifetime validity | Software Included: Pre-Installed Office Home and Student 2021 | 1-Year McAfee Anti-Virus. 1.79 ~ 1.79 cm Thin | Thin & Light Laptop | 1.40 kg | 42WHrs Battery Capacity Up to 6 hours Battery life, Note: Battery life depends on conditions of usage.1x USB 2.0 Type-A, 1x USB 3.2 Gen 1 Type-C, 2x USB 3.2 Gen 1 Type-A, 1x HDMI 1.4, 1x 3.5mm Combo Audio Jack, 1x DC-in"
+  },
+  {
+    id:4,
+    img:mobile6,
+    name:"Redmi Note 13 Pro+ ",
+    type:"Fusion Black, 8GB RAM, 256GB Storage",
+    oldprice:33999,
+    newprice:30999,
+    percentage:"-9%",
+    colors:"fusion balck, fusion white, fusion purple, victory blue",
+    size:"8GB + 256GB",
+    brand:"Realme",
+    os:"Android 13, Xiaomi HyperOS",
+    cpu:"MediaTeck",
+    category:"mobile",
+    description:"Display: 6.67 Inches; 120 Hz 3D Curved AMOLED 1.5K Display with Corning Gorilla Glass Victus; Resolution: 2712 x 1220 Pixels; Dolby Vision, Adaptive HDR 10+, 68.7billion colors, 1800nits Peak Brightness.Processor:Mediatek Dimensity 7200 Octa-core Processor (Based 4nm Architecture) ; Up to 2.8 GHz;Camera: 200MP Main Camera with Samsung ISOCELL HP3 sensor (OIS + EIS supported), 8MP Ultrawide and 2MP Macro | 16MP Front (Selfie) Camera; 7P lens, Dual LED FlashBattery & Charging: 120W HyperCharge Fast-charging with 5000 mAh large battery | 120W Adapter In-box and Type-C Connectivity.Memory, Storage & SIM: 8GB RAM | 256GB Storage | Dual SIM (nano+nano)"
+  },
+  {
+    id:5,
+    img:laptop4,
+    name:"Lenovo IdeaPad Slim 5 ",
+    type:"Cloud Grey 1TB SSD ",
+    oldprice:101990,
+    newprice:80990,
+    percentage:"-20%",
+    colors:"Cloud Grey, 14inch",
+    size:"16GB + 1TB SSD",
+    brand:"Lenovo",
+    os:"Window 11",
+    cpu:"Intel Core Ultra 5 125H",
+    category:"laptop",
+    description:"AI Enabled PC | Intel Core Ultra 5 125H | 14C (4P + 8E + 2LPE) / 18T, Max Turbo up to 4.5Ghz | 14 Cores | 18 Threads | Cache: 18MB. Pre-Loaded Windows 11 Home with Lifetime Validity | MS Office Home and Student 2021 |Flip to Start | Xbox GamePass Ultimate 3-month subscription. Memory and Storage: 16GB RAM LPDDR5x-7467 | 1TB SSD. Integrated Intel Arc Graphics. 14' WUXGA (1920x1200) OLED Display | Brightness: 400 nits | Anti-Glare | 100% sRGB | 60Hz Refresh Rate | Intelligent Sens-Super Resolution & TUV Low Blue Light Protection. 57Wh Battery | 6 Hours |Adaptive Performance with Smart Power| Rapid Charge"
+  },
+  {
+    id:5,
+    img:laptop4,
+    name:"Lenovo IdeaPad Slim 5 ",
+    type:"Cloud Grey 1TB SSD ",
+    oldprice:101990,
+    newprice:80990,
+    percentage:"-20%",
+    colors:"Cloud Grey, 14inch",
+    screen_size:"50 Inches",
+    display:"LED",
+    resolution:"4K",
+    refresh_rate:"60 Hz",
+    ear_placement:"In ear",
+    form_factor:"true wireless",
+    size:"16GB + 1TB SSD",
+    brand:"Lenovo",
+    os:"Window 11",
+    cpu:"Intel Core Ultra 5 125H",
+    category:"laptop",
+    description:"AI Enabled PC | Intel Core Ultra 5 125H | 14C (4P + 8E + 2LPE) / 18T, Max Turbo up to 4.5Ghz | 14 Cores | 18 Threads | Cache: 18MB. Pre-Loaded Windows 11 Home with Lifetime Validity | MS Office Home and Student 2021 |Flip to Start | Xbox GamePass Ultimate 3-month subscription. Memory and Storage: 16GB RAM LPDDR5x-7467 | 1TB SSD. Integrated Intel Arc Graphics. 14' WUXGA (1920x1200) OLED Display | Brightness: 400 nits | Anti-Glare | 100% sRGB | 60Hz Refresh Rate | Intelligent Sens-Super Resolution & TUV Low Blue Light Protection. 57Wh Battery | 6 Hours |Adaptive Performance with Smart Power| Rapid Charge"
+  },
+]
