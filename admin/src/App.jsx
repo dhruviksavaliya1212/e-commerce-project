@@ -9,7 +9,7 @@ import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
-  const url = "http://localhost:4000";
+  const url = "https://e-commerce-project-backend-85sa.onrender.com";
   return (
     <div className=' font-["outfit"] h-full w-full min-h-screen'>
       <ToastContainer />  {/* To display notifications */}
