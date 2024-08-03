@@ -1,39 +1,63 @@
 import itemModel from "../models/itemModel.js";
 import fs from "fs";
 import multer from "multer";
+import { v2 as cloudinary} from "cloudinary";
 
-const upload = multer({ dest: "uploads/" });
+// const upload = multer({ dest: "uploads/" });
 
 const addItem = async (req,res) =>{
 
-    let image_filename = `${req.file.filename}`;
+    try {
+    const name=req.body.name;
+    const type=req.body.type;
+    const description=req.body.description;
+    const newprice=req.body.newprice;
+    const oldprice=req.body.oldprice;
+    const color=req.body.color;
+    const size=req.body.size;
+    const percentage=req.body.percentage;
+    const os=req.body.os;
+    const cpu=req.body.cpu;
+    const category=req.body.category;
+    const brand=req.body.brand;
+    const screensize=req.body.screensize;
+    const resolution=req.body.resolution;
+    const refreshrate=req.body.refreshrate;
+    const display=req.body.display;
+    const earplacement=req.body.earplacement;
+    const formfactor=req.body.formfactor;
+    const imageFile=req.files.image[0];
+    const imageUpload= await cloudinary.uploader.upload(imageFile.path,{resource_type:"image"});
 
-  const item = new itemModel({
-    name:req.body.name,
-    type:req.body.type,
-    description:req.body.description,
-    newprice:req.body.newprice,
-    oldprice:req.body.oldprice,
-    color:req.body.color,
-    size:req.body.size,
-    percentage:req.body.percentage,
-    os:req.body.os,
-    cpu:req.body.cpu,
-    category:req.body.category,
-    brand:req.body.brand,
-    screensize:req.body.screensize,
-    resolution:req.body.resolution,
-    refreshrate:req.body.refreshrate,
-    display:req.body.display,
-    earplacement:req.body.earplacement,
-    formfactor:req.body.formfactor,
-    image:image_filename
-  })
-  try{
-    await item.save();
-    res.json({success:true,message:"Item added"})
-  }
+      const itemData = {
+        name,
+        type,
+        description,
+        newprice,
+        oldprice,
+        color,
+        size,
+        percentage,
+        os,
+        cpu,
+        category,
+        brand,
+        screensize,
+        resolution,
+        refreshrate,
+        display,
+        earplacement,
+        formfactor,
+        image:imageUpload.secure_url
+      }
+
+      const item = itemModel(itemData);
+      await item.save();
+      res.json({success:true,message:"Song Added"})
+
+    } 
   catch(err){
+    console.log(err)
     res.json({success:false,message:"Error"})
   }
 }
@@ -52,8 +76,8 @@ const listItem = async (req,res) => {
 //remove food item
 const removeItem = async (req,res) => {
   try{
-    const item = await itemModel.findById(req.body.id);
-    fs.unlink(`uploads/${item.image}`,()=>{})
+    // const item = await itemModel.findById(req.body.id);
+    // fs.unlink(`uploads/${item.image}`,()=>{})
 
     await itemModel.findByIdAndDelete(req.body.id)
     res.json({success:true, message:"Item Removed"})

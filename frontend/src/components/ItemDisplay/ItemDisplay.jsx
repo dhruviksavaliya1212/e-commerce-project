@@ -22,8 +22,8 @@ const ItemDisplay = ({
       key={index}
       className=" w-[250px] cursor-pointer border-2 border-zinc-600 rounded-sm"
     >
-      <div className="">
-        <img src={url+"/images/"+image} alt="" className=" p-2" />
+      <div className=" h-[270px] grid place-items-center">
+        <img src={image} alt="" className=" p-2" />
       </div>
       <div className=" bg-gradient-to-tr from-orange-300 via-zinc-300 to-[#073b056b] px-2 py-2">
         <h1 className=" text-lg font-semibold my-2 leading-none">{name}</h1>

@@ -4,6 +4,7 @@ import laptop1 from "../../assets/laptop1.png";
 import left from "../../assets/arrow.png";
 import right from "../../assets/arrow.png";
 import buds1 from "../../assets/buds1.png";
+import watch1 from "../../assets/watch1.png";
 
 const Banner = () => {
   const [bannerIndex, setBannerIndex] = useState(0);
@@ -25,6 +26,12 @@ const Banner = () => {
       description:
         "Experience the ultimate sound experience with our high-quality earbuds. Our earbuds are designed to deliver crystal-clear audio, immersive soundscapes, and exceptional battery life.",
       image: buds1,
+    },
+    {
+      title: "Experience the Future of Wearable Technology with Fasttrack",
+      description:
+        "Elevate your daily life with our smartwatch. Experience a seamless and intuitive wearable experience with our cutting-edge smartwatch features, such as 5G connectivity, AI-powered health monitoring, and customizable watch faces.",
+      image: watch1,
     },
   ];
 

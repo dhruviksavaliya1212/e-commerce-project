@@ -18,7 +18,6 @@ const Login = ({url,setToken}) => {
     const name = e.target.name;
     const value = e.target.value;
     setData((prev)=>({...prev,[name]:value}))
-    console.log(data)
   }
 
   const handleLogin = async (e)=>{
@@ -59,7 +58,7 @@ const Login = ({url,setToken}) => {
           type="email"
           name="email"
           placeholder="Enter email"
-          className=" px-3 py-1 bg-transparent border-2 border-zinc-600 placeholder:text-zinc-700 font-medium w-[20rem]"
+          className=" px-3 py-1 bg-transparent border-2 border-zinc-600 placeholder:text-zinc-700 font-medium w-[18rem] sm:w-[20rem]"
         />
         <input
         onChange={onChangeHandler}
@@ -67,7 +66,7 @@ const Login = ({url,setToken}) => {
           type="password"
           name="password"
           placeholder="Enter Password"
-          className=" px-3 py-1 bg-transparent border-2 border-zinc-600 placeholder:text-zinc-700 font-medium w-[20rem]"
+          className=" px-3 py-1 bg-transparent border-2 border-zinc-600 placeholder:text-zinc-700 font-medium w-[18rem] sm:w-[20rem]"
         />
         <div className=" w-full flex justify-center">
           <button

@@ -17,6 +17,10 @@ const Navbar = ({ token, setToken }) => {
     setNav(newNav);
   };
 
+  const setTopOfWindow = () => {
+    window.scrollTo(0, 0);
+  }
+
   const logOut = () => {
     localStorage.removeItem("token");
     setToken("");
@@ -75,19 +79,20 @@ const Navbar = ({ token, setToken }) => {
         </div>
         <div className=" flex gap-4 items-center ">
           <img
-            onClick={() => navigate("/search")}
+            onClick={() => {navigate("/search"); setTopOfWindow();}}
             src={search}
             alt=""
             className=" h-5 cursor-pointer"
           />
           <img
-            onClick={() => navigate("/cart")}
+            onClick={() => {navigate("/cart"); setTopOfWindow();}}
             src={cart}
             alt=""
             className=" h-6 cursor-pointer"
           />
           {!localStorage.getItem("token") ? (
             <Link
+              onClick={setTopOfWindow()}
               to="/login"
               type="button"
               value="submit"

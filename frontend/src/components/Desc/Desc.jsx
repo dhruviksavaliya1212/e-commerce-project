@@ -19,7 +19,7 @@ const Desc = ({ addToCart, removeFromCart, cartItem, itemsData, setItemsData, ur
       {itemsData ? (
         <div className=" w-[95%] flex flex-col lg:flex-row justify-center items-center gap-10">
           <div className=" lg:-mt-20">
-            <img src={url+"/images/"+itemsData.image} alt="" className=" h-76" />
+            <img src={itemsData.image} alt="" className=" h-76" />
           </div>
           <div className=" m-5 flex flex-col gap-2">
             <h1 className=" text-4xl font-semibold">{itemsData.name}</h1>

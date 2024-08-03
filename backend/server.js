@@ -5,18 +5,20 @@ import { connectDB } from './config/db.js';
 import userRouter from './routes/userRoute.js';
 import itemRouter from './routes/itemRoute.js';
 import cartRouter from './routes/cartRoute.js';
+import connectCloudinary from './config/cloudinary.js';
 
 // app config
 const app = express();
 
-const port = 4000;
+const port = process.env.PORT || 4000;
 
 // middleware
 app.use(express.json());
 app.use(cors());
 
 // DB connection
-connectDB()
+connectDB();
+connectCloudinary();
 
 // testing api
 app.get('/',(req,res)=>{
@@ -25,7 +27,6 @@ app.get('/',(req,res)=>{
 
 // routes
 app.use('/api/user',userRouter)
-app.use("/images",express.static("uploads"))
 app.use('/api/item',itemRouter)
 app.use("/api/cart",cartRouter)
 

@@ -18,7 +18,6 @@ const Register = ({url, setToken}) => {
     const value = e.target.value;
     const name =  e.target.name;
     setData((prev)=>({...prev,[name]:value}))
-    console.log(data)
   }
 
   const onRegister = async (e) => {
@@ -58,7 +57,7 @@ const Register = ({url, setToken}) => {
           type="text"
           name="name"
           placeholder="Enter name"
-          className=" px-3 py-1 bg-transparent border-2 border-zinc-600 placeholder:text-zinc-700 font-medium w-[20rem]"
+          className=" px-3 py-1 bg-transparent border-2 border-zinc-600 placeholder:text-zinc-700 font-medium w-[18rem] sm:w-[20rem]"
         />
         <input
           onChange={onChangeHandler}
@@ -66,7 +65,7 @@ const Register = ({url, setToken}) => {
           type="email"
           name="email"
           placeholder="Enter email"
-          className=" px-3 py-1 bg-transparent border-2 border-zinc-600 placeholder:text-zinc-700 font-medium w-[20rem]"
+          className=" px-3 py-1 bg-transparent border-2 border-zinc-600 placeholder:text-zinc-700 font-medium w-[18rem] sm:w-[20rem]"
         />
         <input
           onChange={onChangeHandler}
@@ -74,7 +73,7 @@ const Register = ({url, setToken}) => {
           type="password"
           name="password"
           placeholder="Enter Password"
-          className=" px-3 py-1 bg-transparent border-2 border-zinc-600 placeholder:text-zinc-700 font-medium w-[20rem]"
+          className=" px-3 py-1 bg-transparent border-2 border-zinc-600 placeholder:text-zinc-700 font-medium w-[18rem] sm:w-[20rem]"
         />
         <div className=" w-full flex justify-center">
           <button
