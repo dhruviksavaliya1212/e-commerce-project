@@ -17,7 +17,7 @@ const Desc = ({ addToCart, removeFromCart, cartItem, itemsData, setItemsData, ur
   return (
     <div className="pt-20 w-full flex justify-center">
       {itemsData ? (
-        <div className=" w-[95%] flex flex-col lg:flex-row justify-center items-center gap-10">
+        <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="500" className=" w-[95%] flex flex-col lg:flex-row justify-center items-center gap-10">
           <div className=" lg:-mt-20">
             <img src={itemsData.image} alt="" className=" h-76" />
           </div>

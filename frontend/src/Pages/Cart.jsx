@@ -29,7 +29,7 @@ const Cart = ({
                       className=" w-[330px] sm:w-full grid sm:grid-cols-[1fr_2fr_1fr_0.5fr_1fr_1fr] p-2 border-2 sm:border-0 sm:border-b-2 border-zinc-800 sm:border-b-zinc-800 items-center justify-center font-medium gap-1 sm:gap-0"
                     >
                       <img
-                        src={url + "/images/" + item.image}
+                        src={item.image}
                         alt=""
                         className="h-60 sm:h-14"
                       />

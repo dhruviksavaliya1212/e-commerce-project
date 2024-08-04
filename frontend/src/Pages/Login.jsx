@@ -44,7 +44,7 @@ const Login = ({url,setToken}) => {
       <div class="w-16 h-16 border-8 border-dashed rounded-full animate-spin border-orange-600"></div>
     </div>
   ): (
-    <div className=" mt-7 min-h-screen w-full h-fit flex items-center justify-center">
+    <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="500" className=" mt-7 min-h-screen w-full h-fit flex items-center justify-center">
       <form
         onSubmit={handleLogin}
         action=""

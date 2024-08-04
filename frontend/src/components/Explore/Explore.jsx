@@ -9,8 +9,8 @@ import powerbank from "../../assets/powerbak.png";
 
 const Explore = ({category, setCategory}) => {
   return (
-    <div className=" mt-10 w-full flex justify-center">
-      <div className="md:w-[95%] w-[100%]">
+    <div id="items" className=" mt-10 w-full flex justify-center">
+      <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="500" className="md:w-[95%] w-[100%]">
         <div className=" flex justify-center">
           <h1 className=" text-2xl font-semibold text-orange-600 mb-5">
             Explore Electronics
@@ -24,9 +24,9 @@ const Explore = ({category, setCategory}) => {
                   )
                 } className={`${
                   category === "Mobile"
-                    ? " border-[3px] border-orange-700 "
+                    ? " border-[3px] border-zinc-900 "
                     : ""
-                } w-28 h-28 border-2 cursor-pointer border-zinc-800 bg-gradient-to-tr from-orange-500 via-zinc-500 to-[#073b05fe] grid place-items-center rounded-full`}>
+                } w-28 h-28 border-2 cursor-pointer border-orange-800 bg-gradient-to-tr from-orange-500 via-zinc-500 to-[#073b05fe] grid place-items-center rounded-full`}>
               <img src={mobile2} alt=""  className=" w-14 rounded-md" />
             </div>
             <h1 className=" text-lg font-semibold mt-1 ">Mobiles</h1>
@@ -38,9 +38,9 @@ const Explore = ({category, setCategory}) => {
                   )
                 } className={`${
                   category === "Laptop"
-                    ? " border-[3px] border-orange-700 "
+                    ? " border-[3px] border-zinc-900 "
                     : ""
-                } w-28 h-28 border-2 cursor-pointer border-zinc-800 bg-gradient-to-tr from-orange-500 via-zinc-500 to-[#073b05fe] grid place-items-center rounded-full`}>
+                } w-28 h-28 border-2 cursor-pointer border-orange-800 bg-gradient-to-tr from-orange-500 via-zinc-500 to-[#073b05fe] grid place-items-center rounded-full`}>
               <img src={laptop1} alt="" className=" w-20" />
             </div>
             <h1 className=" text-lg font-semibold mt-1 ">Laptops</h1>
@@ -52,9 +52,9 @@ const Explore = ({category, setCategory}) => {
                   )
                 } className={`${
                   category === "Buds"
-                    ? " border-[3px] border-orange-700 "
+                    ? " border-[3px] border-zinc-900 "
                     : ""
-                } w-28 h-28 border-2 cursor-pointer border-zinc-800 bg-gradient-to-tr from-orange-500 via-zinc-500 to-[#073b05fe] grid place-items-center rounded-full`}>
+                } w-28 h-28 border-2 cursor-pointer border-orange-800 bg-gradient-to-tr from-orange-500 via-zinc-500 to-[#073b05fe] grid place-items-center rounded-full`}>
               <img src={buds1} alt="" className=" w-16" />
             </div>
             <h1 className=" text-lg font-semibold mt-1 ">Buds</h1>
@@ -66,9 +66,9 @@ const Explore = ({category, setCategory}) => {
                   )
                 } className={`${
                   category === "TV"
-                    ? " border-[3px] border-orange-700 "
+                    ? " border-[3px] border-zinc-900 "
                     : ""
-                } w-28 h-28 border-2 cursor-pointer border-zinc-800 bg-gradient-to-tr from-orange-500 via-zinc-500 to-[#073b05fe] grid place-items-center rounded-full`}>
+                } w-28 h-28 border-2 cursor-pointer border-orange-800 bg-gradient-to-tr from-orange-500 via-zinc-500 to-[#073b05fe] grid place-items-center rounded-full`}>
               <img src={tv1} alt="" className=" w-20" />
             </div>
             <h1 className=" text-lg font-semibold mt-1 ">Smart TVs</h1>
@@ -80,9 +80,9 @@ const Explore = ({category, setCategory}) => {
                   )
                 } className={`${
                   category === "smartwatch"
-                    ? " border-[3px] border-orange-700 "
+                    ? " border-[3px] border-zinc-900 "
                     : ""
-                } w-28 h-28 border-2 cursor-pointer border-zinc-800 bg-gradient-to-tr from-orange-500 via-zinc-500 to-[#073b05fe] grid place-items-center rounded-full`}>
+                } w-28 h-28 border-2 cursor-pointer border-orange-800 bg-gradient-to-tr from-orange-500 via-zinc-500 to-[#073b05fe] grid place-items-center rounded-full`}>
               <img src={watch1} alt="" className=" w-16" />
             </div>
             <h1 className=" text-lg font-semibold mt-1 w-[8rem] ">
@@ -96,9 +96,9 @@ const Explore = ({category, setCategory}) => {
                   )
                 } className={`${
                   category === "Powerbank"
-                    ? " border-[3px] border-orange-700"
+                    ? " border-[3px] border-zinc-900"
                     : ""
-                } w-28 h-28 border-2 cursor-pointer border-zinc-800 bg-gradient-to-tr from-orange-500 via-zinc-500 to-[#073b05fe] grid place-items-center rounded-full`}>
+                } w-28 h-28 border-2 cursor-pointer border-orange-800 bg-gradient-to-tr from-orange-500 via-zinc-500 to-[#073b05fe] grid place-items-center rounded-full`}>
               <img src={powerbank} alt="" className=" w-9 mt-1" />
             </div>
             <h1 className=" text-lg font-semibold mt-1 ">Powerbank</h1>
@@ -110,9 +110,9 @@ const Explore = ({category, setCategory}) => {
                   )
                 } className={`${
                   category === "Tablet"
-                    ? " border-[3px] border-orange-700 "
+                    ? " border-[3px] border-zinc-900"
                     : ""
-                } w-28 h-28 border-2 cursor-pointer border-zinc-800 bg-gradient-to-tr from-orange-500 via-zinc-500 to-[#073b05fe] grid place-items-center rounded-full`}>
+                } w-28 h-28 border-2 cursor-pointer border-orange-800 bg-gradient-to-tr from-orange-500 via-zinc-500 to-[#073b05fe] grid place-items-center rounded-full`}>
               <img src={tablet} alt="" className=" w-14 rounded-md" />
             </div>
             <h1 className=" text-lg font-semibold mt-1 ">Tablet</h1>

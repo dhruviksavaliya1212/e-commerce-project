@@ -10,15 +10,17 @@ const ItemDisplay = ({
   oldprice,
   newprice,
   percentage,
-  url
 }) => {
+
+  const setTopOfWindow = () => {
+    window.scrollTo(0, 0);
+  }
 
   const navigate = useNavigate();
 
   return (
     <div 
-      id="#items"
-      onClick={() => navigate(`/description/${id}`)}
+      onClick={() => {navigate(`/description/${id}`); setTopOfWindow()}}
       key={index}
       className=" w-[250px] cursor-pointer border-2 border-zinc-600 rounded-sm"
     >

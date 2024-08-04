@@ -80,7 +80,7 @@ const Add = ({ url }) => {
       });
       setImage(false);
 
-      toast.success(response.data.message);
+      toast.success("Product Added");
     } else {
       toast.error(response.data.message);
     }
@@ -331,9 +331,8 @@ const Add = ({ url }) => {
               <option value="Laptop">Laptop</option>
               <option value="Smartwatch">Smartwatch</option>
               <option value="Buds">Buds</option>
-              {/* <option value="">Pure veg</option>
-              <option value="Pasta">Pasta</option>
-              <option value="Noodles">Noodles</option> */}
+              <option value="Tablet">Tablet</option>
+              <option value="Powerbank">Powerbank</option>
             </select>
           </div>
         </div>

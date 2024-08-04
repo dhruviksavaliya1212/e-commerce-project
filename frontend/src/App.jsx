@@ -9,13 +9,22 @@ import Desc from "./components/Desc/Desc";
 import Cart from "./Pages/Cart";
 import Search from "./Pages/Search";
 import Footer from './components/Footer/Footer'
-export const url = "https://e-commerce-project-backend-85sa.onrender.com";
+export const url = "http://localhost:4000";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios'
+import AOS from 'aos';
+import 'aos/dist/aos.css'
 
 
 const App = () => {
+
+  useEffect(() => {
+    AOS.init({
+
+    })
+    AOS.refresh();
+  })
 
   const [cartItem, setCartItem] = useState({});
   const [itemsData, setItemsData] = useState([]);
@@ -86,7 +95,7 @@ const App = () => {
         <Route path="/login" element={<Login url={url} setToken={setToken} />}></Route>
         <Route path="/register" element={<Register url={url} setToken={setToken}/>} />
         <Route path="/cart" element={<Cart removeFromCart={removeFromCart} cartItem={cartItem}  itemsData={itemsData} getTotalCartAmount={getTotalCartAmount} item_list={item_list} url={url} loadCartData={loadCartData} />} />
-        <Route path="/search" element={<Search />} />
+        <Route path="/search" element={<Search url={url} />} />
         <Route path="/description/:id" element={<Desc addToCart={addToCart} removeFromCart={removeFromCart} cartItem={cartItem} itemsData={itemsData} setItemsData={setItemsData} url={url} item_list={item_list}/>}/>
       </Routes>
       <Footer/>

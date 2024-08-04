@@ -1,5 +1,5 @@
 import express from "express";
-import { addItem, listItem, removeItem } from "../controllers/itemController.js";
+import { addItem, listItem, removeItem, searchItem } from "../controllers/itemController.js";
 import multer from "multer";
 
 
@@ -22,8 +22,7 @@ itemRouter.get('/list',listItem)
 
 itemRouter.post('/remove',removeItem)
 
-
-
+itemRouter.post('/search', searchItem)
 
 
 export default itemRouter;

@@ -8,6 +8,7 @@ import logout from "../../assets/logout_icon.png";
 import bag from "../../assets/bag_icon.png";
 import '../Navbar/navbar.css'
 
+
 const Navbar = ({ token, setToken }) => {
   const navigate = useNavigate();
 
@@ -28,12 +29,12 @@ const Navbar = ({ token, setToken }) => {
   };
 
   return (
-    <div className="w-full z-20 bg-transparent backdrop-blur-sm  md:w-[98%] fixed lg:w-[95%] h-14 pr-5 mt-1 lg:mt-0 scroll-smooth">
+    <div data-aos="fade-down" data-aos-duration="400" className="w-full z-20 bg-transparent backdrop-blur-sm  md:w-[98%] fixed lg:w-[95%] h-14 pr-5 mt-1 lg:mt-0 scroll-smooth">
       <div className=" w-full flex items-center justify-between">
         <div className=" h-full">
-          <img src={logo} alt="" className=" h-10 sm:h-14" />
+          <img data-aos="fade-down" data-aos-duration="500" onClick={()=> navigate('/')} src={logo} alt="" className="h-14" />
         </div>
-        <div className=" md:flex gap-3 font-medium hidden">
+        <div data-aos="fade-down" data-aos-duration="600" className=" md:flex gap-3 font-medium hidden">
           <Link
             to="/"
             onClick={() => hanldeClick("Home")}
@@ -77,7 +78,7 @@ const Navbar = ({ token, setToken }) => {
             Contact-Us
           </a>
         </div>
-        <div className=" flex gap-4 items-center ">
+        <div data-aos="fade-down" data-aos-duration="700" className=" flex gap-4 items-center ">
           <img
             onClick={() => {navigate("/search"); setTopOfWindow();}}
             src={search}

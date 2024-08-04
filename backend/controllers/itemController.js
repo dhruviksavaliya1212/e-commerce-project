@@ -1,10 +1,7 @@
 import itemModel from "../models/itemModel.js";
-import fs from "fs";
-import multer from "multer";
 import { v2 as cloudinary} from "cloudinary";
 
-// const upload = multer({ dest: "uploads/" });
-
+// Add Product
 const addItem = async (req,res) =>{
 
     try {
@@ -53,7 +50,7 @@ const addItem = async (req,res) =>{
 
       const item = itemModel(itemData);
       await item.save();
-      res.json({success:true,message:"Song Added"})
+      res.json({success:true,message:"Product Added"})
 
     } 
   catch(err){
@@ -62,7 +59,7 @@ const addItem = async (req,res) =>{
   }
 }
 
-//all food list
+// List all Product
 const listItem = async (req,res) => {
   try{
     const items = await itemModel.find({});
@@ -73,18 +70,26 @@ const listItem = async (req,res) => {
   }
 }
 
-//remove food item
+//Remove Product
 const removeItem = async (req,res) => {
   try{
-    // const item = await itemModel.findById(req.body.id);
-    // fs.unlink(`uploads/${item.image}`,()=>{})
-
     await itemModel.findByIdAndDelete(req.body.id)
-    res.json({success:true, message:"Item Removed"})
+    res.json({success:true, message:"Product Removed"})
   }
   catch(err){
     res.json({success:false, message:"Error"})
   }
 }
 
-export { addItem, listItem, removeItem };
+//  Search Product 
+const searchItem = async(req,res) => {
+  try {
+    const query = req.body.name ? {name: new RegExp(req.body.name, 'i')} : {category: new RegExp(req.body.category, 'i')}
+    const item = await itemModel.find(query);
+    res.json({success: true, message: "Product found", data: item})
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+export { addItem, listItem, removeItem, searchItem };

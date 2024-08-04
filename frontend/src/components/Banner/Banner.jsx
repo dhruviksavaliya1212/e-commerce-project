@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import mobile2 from "../../assets/mobile2.webp";
 import laptop1 from "../../assets/laptop1.png";
-import left from "../../assets/arrow.png";
+import left from "../../assets/arrowleft.png";
 import right from "../../assets/arrow.png";
 import buds1 from "../../assets/buds1.png";
 import watch1 from "../../assets/watch1.png";
@@ -47,30 +47,32 @@ const Banner = () => {
     <div className=" w-full flex justify-center">
       <div className=" w-[95%] flex relative">
         <img
+        data-aos="fade-up" data-aos-duration="500"
           src={left}
           alt=""
-          className=" bg-zinc-800 hover:scale-[1.1] transition-all h-8 mx-2 cursor-pointer  p-2 rounded-md absolute top-[50%] rotate-180  left-0"
+          className=" bg-zinc-800 hover:scale-[1.1] transition-all h-8 mx-2 cursor-pointer  p-2 rounded-md absolute top-[50%] left-0 z-30"
           onClick={() => handleClick("left")}
         />
         <img
+        data-aos="fade-up" data-aos-duration="500"
           src={right}
           alt=""
-          className=" bg-zinc-800 hover:scale-[1.1] transition-all h-8 mx-2 cursor-pointer  p-2 rounded-md absolute top-[50%]  right-0"
+          className=" bg-zinc-800 hover:scale-[1.1] transition-all h-8 mx-2 cursor-pointer  p-2 rounded-md absolute top-[50%] right-0 z-30"
           onClick={() => handleClick("right")}
         />
-        <div className=" w-full h-fit flex-col gap-7 py-6 lg:flex-row flex justify-between rounded-md bg-gradient-to-tr from-orange-500 via-zinc-500 to-[#073b05fe] min-h-[380px] transition-all">
+        <div data-aos="zoom-in" data-aos-duration="500" className=" w-full h-fit flex-col gap-7 py-6 lg:flex-row flex justify-between rounded-md bg-gradient-to-tr from-orange-500 via-zinc-500 to-[#073b05fe] min-h-[380px] transition-all">
           <div className=" lg:w-1/2 w-full flex items-center justify-center flex-col lg:mx-20 gap-7">
-            <h1 className=" text-xl text-center mx-2 lg:text-2xl font-semibold text-zinc-950">
+            <h1 data-aos="fade-down" data-aos-duration="600" data-aos-delay="100" className=" text-xl text-center mx-2 lg:text-2xl font-semibold text-zinc-950">
               {banners[bannerIndex].title}
             </h1>
-            <p className=" w-[80vw] sm:w-[25rem] font-medium text-gray-900 text-justify ">
+            <p data-aos="fade-down" data-aos-duration="700" data-aos-delay="200" className=" w-[80vw] sm:w-[25rem] font-medium text-gray-900 text-justify ">
               {banners[bannerIndex].description}
             </p>
-            <button className=" bg-slate-800 text-zinc-200 hover:scale-[1.1] transition-all px-5 py-2 tex-md font-semibold uppercase rounded-full shadow-md shadow-zinc-500">
+            <button data-aos="zoom-in" data-aos-duration="600" data-aos-delay="300" className=" bg-slate-800 text-zinc-200 hover:scale-[1.1] transition-all px-5 py-2 tex-md font-semibold uppercase rounded-full shadow-md shadow-zinc-500">
               Buy Today
             </button>
           </div>
-          <div className=" flex items-center lg:mr-20 w-full  justify-center lg:w-1/2">
+          <div data-aos="flip-up" data-aos-duration="700" delay="300" className=" flex items-center lg:mr-20 w-full  justify-center lg:w-1/2">
             <img
               src={banners[bannerIndex].image}
               alt=""
