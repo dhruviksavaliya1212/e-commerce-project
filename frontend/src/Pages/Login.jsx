@@ -31,7 +31,9 @@ const Login = ({url,setToken}) => {
         localStorage.setItem('token', response.data.token);
         toast.success(response.data.message) 
       }
-      toast.error(response.data.message)
+      if(!response.data.success){
+        toast.error(response.data.message)
+      }
     } catch (err) {
         toast.error("Error Occured")
     }
