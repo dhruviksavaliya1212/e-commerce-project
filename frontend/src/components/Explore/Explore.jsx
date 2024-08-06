@@ -76,10 +76,10 @@ const Explore = ({category, setCategory}) => {
           <div className=" flex justify-center flex-col items-center ">
             <div onClick={() =>
                   setCategory((prev) =>
-                    prev === "smartwatch" ? "All" : "smartwatch"
+                    prev === "Smartwatch" ? "All" : "Smartwatch"
                   )
                 } className={`${
-                  category === "smartwatch"
+                  category === "Smartwatch"
                     ? " border-[3px] border-zinc-900 "
                     : ""
                 } w-28 h-28 border-2 cursor-pointer border-orange-800 bg-gradient-to-tr from-orange-500 via-zinc-500 to-[#073b05fe] grid place-items-center rounded-full`}>

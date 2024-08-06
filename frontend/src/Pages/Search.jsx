@@ -56,7 +56,7 @@ const Search = ({ url }) => {
             />
           </div>
         </div>
-        <div className=" w-full grid place-items-center grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-3">
+        <div className=" w-full grid place-items-center grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-3 mt-5">
           {data.map((item, index) => {
             return (
               <div
@@ -65,13 +65,13 @@ const Search = ({ url }) => {
                   navigate(`/description/${item._id}`);
                   setTopOfWindow();
                 }}
-                className=" w-[250px] mt-16 cursor-pointer border-2 border-zinc-600 rounded-sm"
+                className=" w-[200px] cursor-pointer border-2 border-zinc-600 rounded-sm"
               >
-                <div className=" h-[270px] grid place-items-center">
+                <div className=" grid place-items-center">
                   <img src={item.image} alt="" className=" p-2" />
                 </div>
                 <div className=" bg-gradient-to-tr from-orange-300 via-zinc-300 to-[#073b056b] px-2 py-2">
-                  <h1 className=" text-lg font-semibold my-2 leading-none">
+                  <h1 className=" text-md font-semibold my-2 leading-none">
                     {item.name}
                   </h1>
                   <img src={rating} alt="" className=" h-5 mb-3" />

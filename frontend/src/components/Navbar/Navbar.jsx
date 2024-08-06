@@ -32,7 +32,7 @@ const Navbar = ({ token, setToken }) => {
     <div data-aos="fade-down" data-aos-duration="400" className="w-full z-20 bg-transparent backdrop-blur-sm  md:w-[98%] fixed lg:w-[95%] h-14 pr-5 mt-1 lg:mt-0 scroll-smooth">
       <div className=" w-full flex items-center justify-between">
         <div className=" h-full">
-          <img data-aos="fade-down" data-aos-duration="500" onClick={()=> navigate('/')} src={logo} alt="" className="h-14" />
+          <img data-aos="fade-down" data-aos-duration="500" onClick={()=> navigate('/')} src={logo} alt="" className=" h-10 sm:h-14" />
         </div>
         <div data-aos="fade-down" data-aos-duration="600" className=" md:flex gap-3 font-medium hidden">
           <Link

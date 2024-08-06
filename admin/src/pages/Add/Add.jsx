@@ -99,7 +99,7 @@ const Add = ({ url }) => {
         onSubmit={onSubmitHandler}
       >
         <div className="flex flex-col gap-2 relative">
-          <p className=" font-medium">Upload Image</p>
+          <p className=" font-medium">Upload Image <span className=" text-red-500">⁕</span></p>
           <label htmlFor="images">
             <img
               src={image ? URL.createObjectURL(image) : assets.upload_area}
@@ -117,7 +117,7 @@ const Add = ({ url }) => {
           />
         </div>
         <div className=" flex flex-col sm:w-[350px] max-w-[350px] gap-2">
-          <p className=" font-medium">Product Name</p>
+          <p className=" font-medium">Product Name <span className=" text-red-500">⁕</span></p>
           <input
             onChange={onChangeHandler}
             value={data.name}
@@ -128,7 +128,7 @@ const Add = ({ url }) => {
           />
         </div>
         <div className=" flex flex-col sm:w-[350px] max-w-[350px] gap-2">
-          <p className=" font-medium">Product Type</p>
+          <p className=" font-medium">Product Type <span className=" text-red-500">⁕</span></p>
           <input
             onChange={onChangeHandler}
             value={data.type}
@@ -139,7 +139,7 @@ const Add = ({ url }) => {
           />
         </div>
         <div className=" flex flex-col sm:w-[350px] max-w-[350px] gap-2">
-          <p className=" font-medium">Product description</p>
+          <p className=" font-medium">Product description <span className=" text-red-500">⁕</span></p>
           <textarea
             onChange={onChangeHandler}
             value={data.description}
@@ -151,7 +151,7 @@ const Add = ({ url }) => {
         </div>
         <div className="flex flex-col sm:flex-row gap-10">
           <div className=" flex flex-col gap-2">
-            <p className=" font-medium">Product Old Price</p>
+            <p className=" font-medium">Product Old Price <span className=" text-red-500">⁕</span></p>
             <input
               onChange={onChangeHandler}
               value={data.oldprice}
@@ -162,7 +162,7 @@ const Add = ({ url }) => {
             />
           </div>
           <div className=" flex flex-col gap-2">
-            <p className=" font-medium">Product New Price</p>
+            <p className=" font-medium">Product New Price <span className=" text-red-500">⁕</span></p>
             <input
               onChange={onChangeHandler}
               value={data.newprice}
@@ -175,7 +175,7 @@ const Add = ({ url }) => {
         </div>
         <div className="flex flex-col sm:flex-row gap-10">
           <div className=" flex flex-col gap-2">
-            <p className=" font-medium">Product percentage</p>
+            <p className=" font-medium">Product percentage <span className=" text-red-500">⁕</span></p>
             <input
               onChange={onChangeHandler}
               value={data.percentage}
@@ -186,7 +186,7 @@ const Add = ({ url }) => {
             />
           </div>
           <div className=" flex flex-col gap-2">
-            <p className=" font-medium">Product Brand</p>
+            <p className=" font-medium">Product Brand <span className=" text-red-500">⁕</span></p>
             <input
               onChange={onChangeHandler}
               value={data.brand}
@@ -199,7 +199,7 @@ const Add = ({ url }) => {
         </div>
         <div className="flex flex-col sm:flex-row gap-10">
           <div className=" flex flex-col gap-2">
-            <p className=" font-medium">Product Color</p>
+            <p className=" font-medium">Product Color <span className=" text-red-500">⁕</span></p>
             <input
               onChange={onChangeHandler}
               value={data.color}
@@ -319,7 +319,7 @@ const Add = ({ url }) => {
         </div>
         <div className=" flex flex-col sm:flex-row gap-10">
           <div className=" flex flex-col gap-2 max-w-[200px]">
-            <p className=" font-medium">Product category</p>
+            <p className=" font-medium">Product category <span className=" text-red-500">⁕</span></p>
             <select
               onChange={onChangeHandler}
               value={data.category}

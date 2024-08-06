@@ -5,7 +5,7 @@ const Items = ({item_list, url, category}) => {
   return (
     <div className=' w-full  flex justify-center mt-16'>
       <div className=' w-[95%]'>
-        <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="500" className=' w-full grid place-items-center grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-3'>
+        <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="500" className=' w-full grid place-items-center grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-3'>
           {
             item_list.map((item,index)=>{
               if ((category === "All" || category === item.category)) {

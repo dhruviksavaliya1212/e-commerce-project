@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import mobile2 from "../../assets/mobile2.webp";
-import laptop1 from "../../assets/laptop1.png";
+import mobile2 from "../../assets/mobile.png";
+import laptop1 from "../../assets/laptop.png";
 import left from "../../assets/arrowleft.png";
 import right from "../../assets/arrow.png";
-import buds1 from "../../assets/buds1.png";
-import watch1 from "../../assets/watch1.png";
+import buds1 from "../../assets/buds.png";
+import watch1 from "../../assets/watch.png";
 
 const Banner = () => {
   const [bannerIndex, setBannerIndex] = useState(0);
@@ -16,13 +16,13 @@ const Banner = () => {
       image: mobile2,
     },
     {
-      title: "Discover the World of Laptops With Dell",
+      title: "Discover the World of Laptops With Asus",
       description:
         "We are India's most trusted brands. Experience the power of a modern laptop with our innovative solutions. Our laptops are designed to boost your creativity, productivity, and overall well-being.",
       image: laptop1,
     },
     {
-      title: "Upgrade Your Sound Experience with RealMe",
+      title: "Upgrade Your Sound Experience with Oneplus",
       description:
         "Experience the ultimate sound experience with our high-quality earbuds. Our earbuds are designed to deliver crystal-clear audio, immersive soundscapes, and exceptional battery life.",
       image: buds1,
@@ -76,7 +76,7 @@ const Banner = () => {
             <img
               src={banners[bannerIndex].image}
               alt=""
-              className=" rounded-2xl h-[17rem]  "
+              className=" rounded-2xl h-[20rem]  "
             />
           </div>
         </div>

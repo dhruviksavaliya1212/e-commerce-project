@@ -42,26 +42,28 @@ const List = ({ url }) => {
       <p className="text-xl font-semibold text-zinc-800 mb-5 ">
         All Product list
       </p>
-      <div className=" w-full grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] items-center place-items-center gap-4 ">
+      <div className=" w-full grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] items-center place-items-center gap-4 ">
         {list.map((item, index) => {
           return (
             <div
               key={index}
-              className=" w-[260px] flex justify-center flex-col items-center gap-1 px-3 py-2 border border-zinc-700 font-medium shadow-inner shadow-zinc-400"
+              className=" w-[200px] cursor-pointer border-2 border-zinc-600 rounded-sm"
             >
-              <div className=" h-[270px] grid place-items-center">
+              <div className=" grid place-items-center">
                 <img src={item.image} alt="" className=" p-2" />
               </div>
-              <p>{item.name}</p>
-              <p>{item.type}</p>
-              <p>{item.category}</p>
-              <p>₹{item.newprice}</p>
-              <p
-                onClick={() => removeFood(item._id)}
-                className=" text-md bg-red-600 font-medium  text-zinc-300 cursor-pointer border border-zinc-500 w-fit px-5 py-1 rounded-full shadow-md shadow-zinc-600"
-              >
-                Remove
-              </p>
+              <div className=" bg-gradient-to-tr from-orange-300 via-zinc-300 to-[#073b056b] px-2 py-2">
+                <h1 className=" text-md font-semibold my-2 leading-none">
+                  {item.name}
+                </h1>
+                <div className=" flex gap-2 items-center font-medium ">
+                  <p className=" text-sm line-through ">₹{item.oldprice}</p>
+                  <p className=" text-lg text-orange-800 font-semibold">
+                    ₹{item.newprice}
+                  </p>
+                </div>
+                <p className=" text-sm font-medium">{item.percentage}</p>
+              </div>
             </div>
           );
         })}

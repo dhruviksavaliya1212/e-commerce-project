@@ -25,16 +25,16 @@ const Register = ({url, setToken}) => {
     e.preventDefault()
     try {
       const response = await axios.post(`${url}/api/user/register`, data);
-      console.log(response)
       if(response.data.success){
         navigate("/");
         setToken(response.data.token)
         localStorage.setItem("token", response.data.token);
+        toast.success(response.data.message)
       }
-      toast.success(response.data.message);
+      toast.error(response.data.message);
 
     } catch (err) {
-      toast.error(response.data.message);
+      toast.error("Error Occured");
     }
     setLoading(false)
   }
@@ -44,7 +44,7 @@ const Register = ({url, setToken}) => {
       <div class="w-16 h-16 border-8 border-dashed rounded-full animate-spin border-orange-600"></div>
     </div>
   ): (
-    <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="500" className=" mt-7 w-full min-h-screen h-fit flex items-center justify-center">
+    <div className=" mt-7 w-full min-h-screen h-fit flex items-center justify-center">
       <form
         onSubmit={onRegister}
         action=""

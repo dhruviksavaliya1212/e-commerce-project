@@ -22,13 +22,13 @@ const ItemDisplay = ({
     <div 
       onClick={() => {navigate(`/description/${id}`); setTopOfWindow()}}
       key={index}
-      className=" w-[250px] cursor-pointer border-2 border-zinc-600 rounded-sm"
+      className=" w-[200px] cursor-pointer border-2 border-zinc-600 rounded-sm"
     >
-      <div className=" h-[270px] grid place-items-center">
+      <div className=" grid place-items-center">
         <img src={image} alt="" className=" p-2" />
       </div>
       <div className=" bg-gradient-to-tr from-orange-300 via-zinc-300 to-[#073b056b] px-2 py-2">
-        <h1 className=" text-lg font-semibold my-2 leading-none">{name}</h1>
+        <h1 className=" text-md font-semibold my-2 leading-none">{name}</h1>
         <img src={rating} alt="" className=" h-5 mb-3" />
         <div className=" flex gap-2 items-center font-medium ">
           <p className=" text-sm line-through ">₹{oldprice}</p>

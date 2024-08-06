@@ -24,7 +24,6 @@ const Login = ({url,setToken}) => {
     setLoading(true)
     e.preventDefault();
     try {
-      
       const response = await axios.post(`${url}/api/user/login`, data);
       if(response.data.success){
         navigate('/')
@@ -32,9 +31,9 @@ const Login = ({url,setToken}) => {
         localStorage.setItem('token', response.data.token);
         toast.success(response.data.message) 
       }
-
+      toast.error(response.data.message)
     } catch (err) {
-        console.log(err)
+        toast.error("Error Occured")
     }
     setLoading(false)
   }
@@ -44,7 +43,7 @@ const Login = ({url,setToken}) => {
       <div class="w-16 h-16 border-8 border-dashed rounded-full animate-spin border-orange-600"></div>
     </div>
   ): (
-    <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="500" className=" mt-7 min-h-screen w-full h-fit flex items-center justify-center">
+    <div className=" mt-7 min-h-screen w-full h-fit flex items-center justify-center">
       <form
         onSubmit={handleLogin}
         action=""

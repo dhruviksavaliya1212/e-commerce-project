@@ -55,9 +55,6 @@ const App = () => {
     let totalAmount = 0;
     for (const item in cartItem) {
       let itemInfo = item_list.find((product) => product._id === item);
-      console.log(itemInfo)
-      // console.log(item)
-      // console.log(cartItem[item])
       totalAmount += itemInfo.newprice * cartItem[item];
     }
     return totalAmount;
@@ -90,6 +87,7 @@ const App = () => {
         <ToastContainer/>
         <Navbar token={token} setToken={setToken} />
       </div>
+      <div className=" w-full xl:w-[80%]"> 
       <Routes>
         <Route path="/" element={<Home  item_list={item_list} url={url}/>}></Route>
         <Route path="/login" element={<Login url={url} setToken={setToken} />}></Route>
@@ -98,6 +96,7 @@ const App = () => {
         <Route path="/search" element={<Search url={url} />} />
         <Route path="/description/:id" element={<Desc addToCart={addToCart} removeFromCart={removeFromCart} cartItem={cartItem} itemsData={itemsData} setItemsData={setItemsData} url={url} item_list={item_list}/>}/>
       </Routes>
+      </div>
       <Footer/>
     </div>
   );
