@@ -30,7 +30,7 @@ const Search = ({ url }) => {
   }
 
   return loading ? (
-    <div className=" flex w-[70%] justify-center items-center h-screen">
+    <div className=" flex w-full justify-center items-center h-screen">
       <div class="w-16 h-16 border-8 border-dashed rounded-full animate-spin border-orange-600"></div>
     </div>
   ):  (
