@@ -104,7 +104,7 @@ const Navbar = ({ token, setToken }) => {
           ) : (
             <div className="navbar-profile relative transition-all duration-100">
               <img src={profile} alt="" className=" w-6 " />
-              <ul className=" w-[8em] hidden nav-profile-dropdown absolute right-0 top-8 gap-1 flex-col bg-zinc-200 rounded-md border-2 border-orange-600 font-medium ">
+              <ul className=" w-[8em] hidden nav-profile-dropdown absolute right-0 top-7 gap-1 flex-col bg-zinc-200 rounded-md border-2 border-orange-600 font-medium ">
                 <li
                   onClick={() => navigate("/myorders")}
                   className=" mx-4 my-3 cursor-pointer flex gap-2 text-md"

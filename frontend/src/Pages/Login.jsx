@@ -41,8 +41,8 @@ const Login = ({url,setToken}) => {
   }
 
   return loading ? (
-    <div className=" flex w-full justify-center items-center h-screen">
-      <div class="w-16 h-16 border-8 border-dashed rounded-full animate-spin border-orange-600"></div>
+    <div className=" flex w-[100%] justify-center items-center h-[100vh]">
+      <div className="w-16 h-16 border-8 border-dashed rounded-full animate-spin border-orange-600"></div>
     </div>
   ): (
     <div className=" mt-7 min-h-screen w-full h-fit flex items-center justify-center">

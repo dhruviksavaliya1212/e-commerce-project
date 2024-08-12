@@ -23,7 +23,7 @@ const Desc = ({ addToCart, removeFromCart, cartItem, itemsData, setItemsData, ur
           </div>
           <div className=" m-5 flex flex-col gap-2">
             <h1 className=" text-4xl font-semibold">{itemsData.name}</h1>
-            <p className=" text-md font-medium">{itemsData.type}</p>
+            <p className=" text-md font-medium  md:w-[600px] sm:[500px]">{itemsData.type}</p>
             <div className=" my-5">
               <div className="flex gap-3 items-center">
                 <p className=" text-red-500 text-xl font-normal">

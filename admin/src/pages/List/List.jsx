@@ -17,7 +17,7 @@ const List = ({ url }) => {
     setLoading(false);
   };
 
-  const removeFood = async (itemId) => {
+  const removeItem = async (itemId) => {
     setLoading(true);
     const response = await axios.post(`${url}/api/item/remove`, { id: itemId });
     await fetchList();
@@ -62,7 +62,12 @@ const List = ({ url }) => {
                     ₹{item.newprice}
                   </p>
                 </div>
-                <p className=" text-sm font-medium">{item.percentage}</p>
+                <div className=" flex gap-5 items-center">
+                  <p className=" text-md font-medium">{item.percentage}</p>
+                  <button onClick={() => removeItem(item._id)} className=" px-3 py-1 rounded border-2 bg-red-500 border-zinc-500 mt-3 font-semibold">
+                    Remove
+                  </button>
+                </div>
               </div>
             </div>
           );

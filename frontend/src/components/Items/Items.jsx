@@ -10,8 +10,8 @@ const Items = ({item_list, url, category}) => {
             item_list.map((item,index)=>{
               if ((category === "All" || category === item.category)) {
               return(
-                <div>
-                  <ItemDisplay id={item._id} index={index} name={item.name} image={item.image} oldprice={item.oldprice} newprice={item.newprice} percentage={item.percentage} url={url}/>
+                <div key={index}>
+                  <ItemDisplay id={item._id} name={item.name} image={item.image} oldprice={item.oldprice} newprice={item.newprice} percentage={item.percentage} url={url}/>
                 </div>
               )
               }

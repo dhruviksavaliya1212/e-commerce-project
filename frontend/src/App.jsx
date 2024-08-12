@@ -30,6 +30,7 @@ const App = () => {
   const [itemsData, setItemsData] = useState([]);
   const [token,setToken] = useState("")
   const [item_list, setItem_list] = useState([]);
+  const [loading,setLoading] = useState(false);
 
   const addToCart = async(itemId) => {
     if (!cartItem[itemId]) {
@@ -60,9 +61,13 @@ const App = () => {
     return totalAmount;
   };
 
-  const fetchFood_list = async ( ) => {
+  const fetchItem_list = async ( ) => {
+    setLoading(true)
     const response = await axios.get (url+"/api/item/list");
-    setItem_list(response.data.data);
+    if(response.data.success){
+      setItem_list(response.data.data);
+    }
+    setLoading(false)
   }
 
   const loadCartData = async (token) => {
@@ -72,7 +77,7 @@ const App = () => {
 
   useEffect(()=>{
     async function loadData(){
-      await fetchFood_list();
+      await fetchItem_list();
       if(localStorage.getItem("token")){
         setToken(localStorage.getItem("token"));
         await loadCartData(localStorage.getItem("token"));
@@ -81,7 +86,11 @@ const App = () => {
     loadData();
   },[]);
 
-  return (
+  return loading ? (
+    <div className=" flex w-[100%] justify-center items-center h-[100vh]">
+      <div className="w-16 h-16 border-8 border-dashed rounded-full animate-spin border-orange-600"></div>
+    </div>
+  ): (
     <div className=" h-full w-full flex font-['poppins'] flex-col justify-center items-center">
       <div className=" h-full w-[95%] ">
         <ToastContainer/>

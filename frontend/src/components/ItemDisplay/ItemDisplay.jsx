@@ -4,7 +4,6 @@ import rating from "../../assets/rating_starts.png";
 
 const ItemDisplay = ({
   id,
-  index,
   name,
   image,
   oldprice,
@@ -21,7 +20,6 @@ const ItemDisplay = ({
   return (
     <div 
       onClick={() => {navigate(`/description/${id}`); setTopOfWindow()}}
-      key={index}
       className=" w-[200px] cursor-pointer border-2 border-zinc-600 rounded-sm"
     >
       <div className=" grid place-items-center">
@@ -35,7 +33,6 @@ const ItemDisplay = ({
           <p className=" text-lg text-orange-800 font-semibold">₹{newprice}</p>
         </div>
         <p className=" text-sm font-medium">{percentage}</p>
-        
       </div>
     </div>
   );
