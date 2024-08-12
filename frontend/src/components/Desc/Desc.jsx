@@ -15,7 +15,7 @@ const Desc = ({ addToCart, removeFromCart, cartItem, itemsData, setItemsData, ur
   }, [id]);
 
   return (
-    <div className="pt-20 w-full flex justify-center overflow-hidden">
+    <div className="pt-20 w-full min-h-screen flex justify-center overflow-hidden">
       {itemsData ? (
         <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="500" className=" w-[95%] flex flex-col lg:flex-row justify-center items-center gap-0 lg:gap-10">
           <div className=" w-[20rem] md:w-[25rem] lg:w-[30rem] h-full">
