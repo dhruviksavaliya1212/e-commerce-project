@@ -15,6 +15,10 @@ const Sidebar = () => {
           <img src={assets.order_icon} alt="" />
           <p className='hidden sm:block'>List Items</p>
         </NavLink>
+        <NavLink to='/orders' className=" sidebar-option flex flex-col lg:flex-row items-center gap-3 border-2 border-r-0 border-zinc-500 px-2 py-[10px] rounded-l-md cursor-pointer">
+          <img src={assets.order_icon} alt="" />
+          <p className=' hidden sm:block'>Orders</p>
+        </NavLink>
       </div>
     </div>
   )

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import search from "../assets/search_icon.png";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -18,6 +18,7 @@ const Search = ({ url }) => {
       const response = await axios.post(`${url}/api/item/search`, { name });
       if (response.data.success) {
         setData(response.data.data);
+        sessionStorage.setItem("data", JSON.stringify(response.data.data));
       }
     } catch (err) {
       toast.error("Product Not Found")
@@ -28,6 +29,17 @@ const Search = ({ url }) => {
   const setTopOfWindow = () => {
     window.scrollTo(0, 0);
   }
+
+  useEffect(()=>{
+    const storedSearchResult = sessionStorage.getItem("data");
+    const query = sessionStorage.getItem("query");
+    if(query){
+      setName(query);
+    }
+    if(storedSearchResult){
+      setData(JSON.parse(storedSearchResult));
+    }
+  },[])
 
   return loading ? (
     <div className=" flex w-[100%] justify-center items-center h-screen">
@@ -41,6 +53,7 @@ const Search = ({ url }) => {
             onChange={(e) => {
               const value = e.target.value;
               setName(value);
+              sessionStorage.setItem("query", value);
             }}
             value={name}
             type="text"

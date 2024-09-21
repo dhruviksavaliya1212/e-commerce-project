@@ -6,6 +6,8 @@ import userRouter from './routes/userRoute.js';
 import itemRouter from './routes/itemRoute.js';
 import cartRouter from './routes/cartRoute.js';
 import connectCloudinary from './config/cloudinary.js';
+import orderRouter from './routes/orderRoute.js';
+import adminRouter from './routes/adminRoute.js';
 
 // app config
 const app = express();
@@ -27,8 +29,10 @@ app.get('/',(req,res)=>{
 
 // routes
 app.use('/api/user',userRouter)
+app.use('/api/admin',adminRouter)
 app.use('/api/item',itemRouter)
 app.use("/api/cart",cartRouter)
+app.use('/api/order',orderRouter)
 
 
 app.listen(port,()=>{

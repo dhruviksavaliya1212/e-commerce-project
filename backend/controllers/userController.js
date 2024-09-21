@@ -34,7 +34,6 @@ const registerUser = async(req,res) => {
   const {name,email,password} = req.body;
 
   try {
-
     // if user already exist
     const exist = await userModel.findOne({ email });
     if(exist){
@@ -42,6 +41,9 @@ const registerUser = async(req,res) => {
     }
 
     // validate the email and password
+    if(name.length < 2){
+      return res.json({success:false, message: "Name is required"});
+    }
     if(!validator.isEmail(email)){
       return res.json({success:false, message: "Email is not valid"});
     }

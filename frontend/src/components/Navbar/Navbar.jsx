@@ -6,10 +6,9 @@ import { Link, useNavigate } from "react-router-dom";
 import profile from "../../assets/profile_icon.png";
 import logout from "../../assets/logout_icon.png";
 import bag from "../../assets/bag_icon.png";
-import '../Navbar/navbar.css'
+import "../Navbar/navbar.css";
 
-
-const Navbar = ({ token, setToken }) => {
+const Navbar = ({ token, setToken, getTotalCartAmount }) => {
   const navigate = useNavigate();
 
   const [nav, setNav] = useState("Home");
@@ -20,7 +19,7 @@ const Navbar = ({ token, setToken }) => {
 
   const setTopOfWindow = () => {
     window.scrollTo(0, 0);
-  }
+  };
 
   const logOut = () => {
     localStorage.removeItem("token");
@@ -29,12 +28,27 @@ const Navbar = ({ token, setToken }) => {
   };
 
   return (
-    <div data-aos="fade-down" data-aos-duration="400" className="w-full z-20 bg-transparent backdrop-blur-sm  md:w-[98%] fixed lg:w-[95%] h-14 pr-5 mt-1 lg:mt-0 scroll-smooth">
+    <div
+      data-aos="fade-down"
+      data-aos-duration="400"
+      className="w-full z-20 bg-transparent backdrop-blur-sm  md:w-[98%] fixed lg:w-[95%] h-14 pr-5 mt-1 lg:mt-0 scroll-smooth"
+    >
       <div className=" w-full flex items-center justify-between">
         <div className=" h-full">
-          <img data-aos="fade-down" data-aos-duration="500" onClick={()=> navigate('/')} src={logo} alt="" className=" h-10 sm:h-14" />
+          <img
+            data-aos="fade-down"
+            data-aos-duration="500"
+            onClick={() => navigate("/")}
+            src={logo}
+            alt=""
+            className=" h-10 sm:h-14"
+          />
         </div>
-        <div data-aos="fade-down" data-aos-duration="600" className=" md:flex gap-3 font-medium hidden">
+        <div
+          data-aos="fade-down"
+          data-aos-duration="600"
+          className=" md:flex gap-3 font-medium hidden"
+        >
           <Link
             to="/"
             onClick={() => hanldeClick("Home")}
@@ -78,19 +92,32 @@ const Navbar = ({ token, setToken }) => {
             Contact-Us
           </a>
         </div>
-        <div data-aos="fade-down" data-aos-duration="700" className=" flex gap-4 items-center ">
+        <div
+          data-aos="fade-down"
+          data-aos-duration="700"
+          className=" flex gap-4 items-center "
+        >
           <img
-            onClick={() => {navigate("/search"); setTopOfWindow();}}
+            onClick={() => {
+              navigate("/search");
+              setTopOfWindow();
+            }}
             src={search}
             alt=""
             className=" h-5 cursor-pointer"
           />
-          <img
-            onClick={() => {navigate("/cart"); setTopOfWindow();}}
-            src={cart}
-            alt=""
-            className=" h-6 cursor-pointer"
-          />
+          <div className="relative">
+            <div className={getTotalCartAmount() === 0 ? "" :"absolute -right-1 -top-1 w-3 h-3 bg-red-500 rounded-full"}></div>
+            <img
+              onClick={() => {
+                navigate("/cart");
+                setTopOfWindow();
+              }}
+              src={cart}
+              alt=""
+              className=" h-6 cursor-pointer"
+            />
+          </div>
           {!localStorage.getItem("token") ? (
             <Link
               onClick={setTopOfWindow()}

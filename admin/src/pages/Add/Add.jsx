@@ -4,7 +4,7 @@ import axios from "axios";
 import FormData from "form-data";
 import { toast } from "react-toastify";
 
-const Add = ({ url }) => {
+const Add = ({ url, token }) => {
   const [image, setImage] = useState(false);
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState({
@@ -92,6 +92,11 @@ const Add = ({ url }) => {
       <div class="w-16 h-16 border-8 border-dashed rounded-full animate-spin border-orange-600"></div>
     </div>
   ) : (
+    !token ? (
+      <div className="text-center text-xl mt-5 ml-5 text-red-600">
+        Please login
+      </div>
+    ) : (
     <div className=" w-[70%] sm:ml-20 ml-5 mt-12 text-zinc-800 text-md">
       <form
         action=""
@@ -344,6 +349,7 @@ const Add = ({ url }) => {
         </button>
       </form>
     </div>
+    )
   );
 };
 

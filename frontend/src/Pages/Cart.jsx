@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Cart = ({
   cartItem,
@@ -6,7 +7,10 @@ const Cart = ({
   getTotalCartAmount,
   item_list,
 }) => {
-  return (
+
+  const navigate = useNavigate();
+
+  return  (
     <div className=" min-h-screen w-full pt-20 flex  justify-center">
       <div className=" w-[95%]">
         {getTotalCartAmount() ? (
@@ -49,7 +53,7 @@ const Cart = ({
                       </h2>
                       <button
                         onClick={() => removeFromCart(item._id)}
-                        className=" mb-3 sm:mb-0 bg-red-600 w-[8rem] ml-14 sm:ml-0 md:w-[8rem] px-5 py-2 shadow-md shadow-zinc-700 rounded-full font-semibold cursor-pointer"
+                        className=" mb-3 sm:mb-0 bg-red-600 w-[8rem] ml-14 sm:ml-0 md:w-[6rem] px-3 py-2 shadow-md shadow-zinc-700 rounded-full text-sm font-semibold cursor-pointer"
                       >
                         Remove
                       </button>
@@ -75,7 +79,7 @@ const Cart = ({
                   <p>Total</p>
                   <p>₹{getTotalCartAmount() + 99}</p>
                 </div>
-                <button className=" bg-orange-600 px-5 py-2 shadow-md shadow-zinc-700 rounded-full font-semibold cursor-pointer">
+                <button onClick={()=> navigate('/checkout')} className=" bg-orange-600 px-5 py-2 shadow-md shadow-zinc-700 rounded-full font-semibold cursor-pointer">
                   Proceed to checkout
                 </button>
               </div>

@@ -7,8 +7,8 @@ import linkedin_icon from '../../assets/linkedin_icon.png'
 
 const Footer = () => {
   return (
-    <div id='footer' className='text-zinc-200 bg-gray-900 flex flex-col items-centern px-10 md:px-10 lg:px-20 sm:px-20 pt-16 pb-5 mt-10 rounded-t-lg w-full'>  
-      <div data-aos="fade-down" data-aos-delay="400" data-aos-duration="500" className="flex flex-col md:flex-row gap-10 md:gap-0 justify-between w-full">
+    <div id='footer' className='text-zinc-200 bg-slate-900 flex flex-col items-centern px-10 md:px-10 lg:px-20 sm:px-20 pt-16 pb-5 mt-10 rounded-t-lg w-full'>  
+      <div className="flex flex-col md:flex-row gap-10 md:gap-0 justify-between w-full">
         <div className="left w-[19em] ">
           <img src={logo} alt="" srcset="" className=' h-14 mb-5' />
           <p className='mb-5 text-zinc-400 font-normal leading-5 mr-1'>I hope you buy products from electrokart and we will give our best for providing such amazing and good services. If you have any query then you can contact us</p>

@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
-const List = ({ url }) => {
+const List = ({ url, token }) => {
   const [list, setList] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -38,6 +38,11 @@ const List = ({ url }) => {
       <div className="w-16 h-16 border-8 border-dashed rounded-full animate-spin border-orange-600"></div>
     </div>
   ) : (
+      !token ? (
+        <div className="text-center text-xl mt-5 ml-5 text-red-600">
+          Please login
+        </div>
+      ) : (
     <div className=" w-[75%]  ml-[3vw] my-10">
       <p className="text-xl font-semibold text-zinc-800 mb-5 ">
         All Product list
@@ -74,6 +79,7 @@ const List = ({ url }) => {
         })}
       </div>
     </div>
+      )
   );
 };
 

@@ -9,12 +9,14 @@ import Desc from "./components/Desc/Desc";
 import Cart from "./Pages/Cart";
 import Search from "./Pages/Search";
 import Footer from './components/Footer/Footer'
-export const url = "https://e-commerce-project-backend-85sa.onrender.com";
+export const url =  "http://localhost:4000";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios'
 import AOS from 'aos';
 import 'aos/dist/aos.css'
+import CheckOut from "./Pages/CheckOut";
+import Orders from "./Pages/Orders";
 
 
 const App = () => {
@@ -86,24 +88,22 @@ const App = () => {
     loadData();
   },[]);
 
-  return loading ? (
-    <div className=" flex w-[100%] justify-center items-center h-[100vh]">
-      <div className="w-16 h-16 border-8 border-dashed rounded-full animate-spin border-orange-600"></div>
-    </div>
-  ): (
+  return  (
     <div className=" h-full w-full flex font-['poppins'] flex-col justify-center items-center">
       <div className=" h-full w-[95%] ">
         <ToastContainer/>
-        <Navbar token={token} setToken={setToken} />
+        <Navbar getTotalCartAmount={getTotalCartAmount} token={token} setToken={setToken} />
       </div>
       <div className=" w-full xl:w-[80%]"> 
       <Routes>
-        <Route path="/" element={<Home  item_list={item_list} url={url}/>}></Route>
+        <Route path="/" element={<Home loading={loading}  item_list={item_list} url={url}/>}></Route>
         <Route path="/login" element={<Login url={url} setToken={setToken} />}></Route>
         <Route path="/register" element={<Register url={url} setToken={setToken}/>} />
         <Route path="/cart" element={<Cart removeFromCart={removeFromCart} cartItem={cartItem}  itemsData={itemsData} getTotalCartAmount={getTotalCartAmount} item_list={item_list} url={url} loadCartData={loadCartData} />} />
         <Route path="/search" element={<Search url={url} />} />
         <Route path="/description/:id" element={<Desc addToCart={addToCart} removeFromCart={removeFromCart} cartItem={cartItem} itemsData={itemsData} setItemsData={setItemsData} url={url} item_list={item_list}/>}/>
+        <Route path="/checkout" element={<CheckOut getTotalCartAmount={getTotalCartAmount} item_list={item_list} cartItem={cartItem} token={token} url={url}/>}/>
+        <Route path="/myorders" element={<Orders token={token} url={url}/>}/>
       </Routes>
       </div>
       <Footer/>
