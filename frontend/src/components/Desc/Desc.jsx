@@ -23,7 +23,6 @@ const Desc = ({
   }, [id]);
 
   return (
-<<<<<<< HEAD
     <div className=" min-h-screen">
       <div className="pt-20  w-full flex justify-center overflow-hidden">
         {itemsData ? (
@@ -35,7 +34,10 @@ const Desc = ({
           >
             <div className=" w-[20rem] md:w-[25rem] lg:w-[30rem] h-full">
               <img src={itemsData.image} alt="" className="" />
-=======
+            </div>
+          </div>
+        ) : null}
+      </div>
     <div className="pt-20 w-full min-h-screen flex justify-center overflow-hidden">
       {itemsData ? (
         <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="500" className=" w-[95%] flex flex-col lg:flex-row justify-center items-center gap-0 lg:gap-10">
@@ -58,7 +60,6 @@ const Desc = ({
                 M.R.P :
                 <span className="line-through"> ₹{itemsData.oldprice}</span>
               </p>
->>>>>>> 70308491e9beda53213e4bb7a5f91b3c68381a4f
             </div>
             <div className=" m-5 flex flex-col gap-2">
               <h1 className=" text-4xl font-semibold">{itemsData.name}</h1>
@@ -250,8 +251,9 @@ const Desc = ({
               )}
             </div>
           </div>
-        ) : null}
       </div>
+        ) : null}
+    </div>
     </div>
   );
 };
