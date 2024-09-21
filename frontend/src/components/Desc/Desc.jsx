@@ -23,6 +23,7 @@ const Desc = ({
   }, [id]);
 
   return (
+<<<<<<< HEAD
     <div className=" min-h-screen">
       <div className="pt-20  w-full flex justify-center overflow-hidden">
         {itemsData ? (
@@ -34,6 +35,30 @@ const Desc = ({
           >
             <div className=" w-[20rem] md:w-[25rem] lg:w-[30rem] h-full">
               <img src={itemsData.image} alt="" className="" />
+=======
+    <div className="pt-20 w-full min-h-screen flex justify-center overflow-hidden">
+      {itemsData ? (
+        <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="500" className=" w-[95%] flex flex-col lg:flex-row justify-center items-center gap-0 lg:gap-10">
+          <div className=" w-[20rem] md:w-[25rem] lg:w-[30rem] h-full">
+            <img src={itemsData.image} alt="" className="" />
+          </div>
+          <div className=" m-5 flex flex-col gap-2">
+            <h1 className=" text-4xl font-semibold">{itemsData.name}</h1>
+            <p className=" text-md font-medium  md:w-[600px] sm:[500px]">{itemsData.type}</p>
+            <div className=" my-5">
+              <div className="flex gap-3 items-center">
+                <p className=" text-red-500 text-xl font-normal">
+                  {itemsData.percentage}
+                </p>
+                <p className=" text-xl font-medium text-zinc-800">
+                  ₹{itemsData.newprice}
+                </p>
+              </div>
+              <p className=" text-sm  font-medium">
+                M.R.P :
+                <span className="line-through"> ₹{itemsData.oldprice}</span>
+              </p>
+>>>>>>> 70308491e9beda53213e4bb7a5f91b3c68381a4f
             </div>
             <div className=" m-5 flex flex-col gap-2">
               <h1 className=" text-4xl font-semibold">{itemsData.name}</h1>
