@@ -12,7 +12,7 @@ import Desc from './pages/Desc/Desc'
 
 const App = () => {
   const [token,setToken] = useState("");
-  const url = "https://e-commerce-project-backend-85sa.onrender.com";
+  const url = "http://localhost:4000";
 
   useEffect(()=>{
     if(localStorage.getItem("token")){
