@@ -34,7 +34,6 @@ const Desc = ({
 
   return (
     <div className=" min-h-screen">
-
     <div className="pt-20 w-full min-h-screen flex justify-center overflow-hidden">
       {itemsData ? (
         <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="500" className=" w-[95%] flex flex-col lg:flex-row justify-center items-center gap-0 lg:gap-10">
