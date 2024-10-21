@@ -1,8 +1,9 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { redirect, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
-const CheckOut = ({ getTotalCartAmount, cartItem, item_list, token, url }) => {
+const CheckOut = ({ getTotalCartAmount, cartItem, setCartItem, item_list, token, url }) => {
 
   const navigate = useNavigate();
 
@@ -16,11 +17,12 @@ const CheckOut = ({ getTotalCartAmount, cartItem, item_list, token, url }) => {
     zipCode: "",
     phone: "",
   });
+
   const onChangeHandler = (e) => {
     const name = e.target.name;
     const value = e.target.value;
     setData((data) => ({ ...data, [name]: value }));
-    console.log(data);
+    
   };
 
   const placeOrder = async (e) => {
@@ -30,8 +32,7 @@ const CheckOut = ({ getTotalCartAmount, cartItem, item_list, token, url }) => {
       if(cartItem[item._id]>0){
         let itemInfo = item;
         itemInfo['quentity'] = cartItem[item._id];
-        orderItems.push(itemInfo);
-        console.log(orderItems);
+        orderItems.push(itemInfo);    
       }
     })
 
@@ -40,19 +41,15 @@ const CheckOut = ({ getTotalCartAmount, cartItem, item_list, token, url }) => {
       items:orderItems,
       amount:getTotalCartAmount()+99
     }
-    console.log(orderData);
 
     const response = await axios.post(url+"/api/order/place", orderData, {headers:{token}});
-    console.log(response)
     if(response.data.success) {
-      console.log(response.data.success);
+      toast.success("Order placed successfully")
     }
     else{
-      console.log("error")
+      toast.error("error")
     }
-
     navigate('/');
-    
   }
 
   return (

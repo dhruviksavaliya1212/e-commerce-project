@@ -101,8 +101,8 @@ const App = () => {
         <Route path="/register" element={<Register url={url} setToken={setToken}/>} />
         <Route path="/cart" element={<Cart removeFromCart={removeFromCart} cartItem={cartItem}  itemsData={itemsData} getTotalCartAmount={getTotalCartAmount} item_list={item_list} url={url} loadCartData={loadCartData} />} />
         <Route path="/search" element={<Search url={url} />} />
-        <Route path="/description/:id" element={<Desc addToCart={addToCart} removeFromCart={removeFromCart} cartItem={cartItem} itemsData={itemsData} setItemsData={setItemsData} url={url} item_list={item_list}/>}/>
-        <Route path="/checkout" element={<CheckOut getTotalCartAmount={getTotalCartAmount} item_list={item_list} cartItem={cartItem} token={token} url={url}/>}/>
+        <Route path="/description/:id" element={<Desc addToCart={addToCart} removeFromCart={removeFromCart} cartItem={cartItem} itemsData={itemsData} setItemsData={setItemsData} url={url} item_list={item_list} token={token}/>}/>
+        <Route path="/checkout" element={<CheckOut getTotalCartAmount={getTotalCartAmount} item_list={item_list} cartItem={cartItem} setCartItem={setCartItem} token={token} url={url}/>}/>
         <Route path="/myorders" element={<Orders token={token} url={url}/>}/>
       </Routes>
       </div>

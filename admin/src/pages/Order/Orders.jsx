@@ -25,7 +25,6 @@ const Orders = ({ url, token }) => {
         await fetchAllOrders();
       }
     } catch (err) {
-      console.log(err);
     }
 
   };
@@ -53,7 +52,6 @@ const Orders = ({ url, token }) => {
               <div className="">
                 <p className=" font-medium mb-4">
                   {order.items.map((item, index) => {
-                    console.log(item)
                     if (index === order.items.length - 1) {
                       return item.name + " * " + item.quentity;
                     } else {

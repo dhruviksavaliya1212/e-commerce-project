@@ -54,7 +54,6 @@ const addItem = async (req,res) =>{
 
     } 
   catch(err){
-    console.log(err)
     res.json({success:false,message:"Error"})
   }
 }
@@ -88,7 +87,6 @@ const searchItem = async(req,res) => {
     const item = await itemModel.find(query);
     res.json({success: true, message: "Product found", data: item})
   } catch (err) {
-    console.log(err)
   }
 }
 

@@ -4,11 +4,11 @@ import Sidebar from './components/Sidebar/Sidebar'
 import { Route, Routes } from 'react-router-dom'
 import Add from './pages/Add/Add'
 import List from './pages/List/List'
-
 import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
 import Orders from './pages/Order/Orders'
 import Login from './pages/Login/Login'
+import Desc from './pages/Desc/Desc'
 
 const App = () => {
   const [token,setToken] = useState("");
@@ -29,6 +29,7 @@ const App = () => {
         <Routes>
           <Route path='/add' element={<Add url={url} token={token}/>}/>
           <Route path='/list' element={<List url={url} token={token}/>}/>
+          <Route path='/list/:id' element={<Desc url={url} token={token}/>}/>
           <Route path='/orders' element={<Orders url={url} token={token}/>}/>
           <Route path='/login' element={<Login url={url} setToken={setToken}/>}/>
         </Routes>

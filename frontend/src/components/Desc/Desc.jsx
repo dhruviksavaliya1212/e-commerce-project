@@ -1,7 +1,8 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import add from "../../assets/add_icon_green.png";
 import remove from "../../assets/remove_icon_red.png";
 import { useParams } from "react-router-dom";
+import axios from 'axios'
 
 const Desc = ({
   addToCart,
@@ -10,18 +11,26 @@ const Desc = ({
   itemsData,
   setItemsData,
   url,
-  item_list,
+  token
 }) => {
   const { id } = useParams();
 
+  const fetchList = async () => {
+    const response = await axios.get(`${url}/api/item/list`);
+    if (response.data.success) {
+      response.data.data.map((item) => {
+        if (item._id === id) {
+          setItemsData(item)
+        }
+      });
+    } else {
+      toast.error(response.data.message);
+    }
+  };
+
   useEffect(() => {
-    item_list.map((item) => {
-      if (item._id === id) {
-        setItemsData(item);
-        console.log(item);
-      }
-    });
-  }, [id]);
+    fetchList();
+  }, [token]);
 
   return (
     <div className=" min-h-screen">

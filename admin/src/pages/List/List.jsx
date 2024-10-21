@@ -1,8 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const List = ({ url, token }) => {
+
+  const navigate = useNavigate();
+
   const [list, setList] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -10,7 +14,7 @@ const List = ({ url, token }) => {
     setLoading(true);
     const response = await axios.get(`${url}/api/item/list`);
     if (response.data.success) {
-      setList(response.data.data);
+      setList(response.data.data.reverse());
     } else {
       toast.error(response.data.message);
     }
@@ -51,6 +55,7 @@ const List = ({ url, token }) => {
         {list.map((item, index) => {
           return (
             <div
+              onClick={()=>navigate(`/list/${item._id}`)}
               key={index}
               className=" w-[200px] cursor-pointer border-2 border-zinc-600 rounded-sm"
             >

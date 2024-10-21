@@ -28,7 +28,7 @@ const Login = ({url, setToken}) => {
       if(response.data.success){
         navigate('/add')
         setToken(response.data.token)
-        localStorage.setItem('token', response.data.token);
+        localStorage.setItem('admintoken', response.data.token);
         toast.success(response.data.message) 
       }
       if(!response.data.success){
@@ -36,12 +36,9 @@ const Login = ({url, setToken}) => {
       }
     } catch (err) {
         toast.error("Error Occured")
-        console.log(err)
     }
     setLoading(false)
   }
-
-
 
   return loading ? (
     <div className=" flex w-[100%] justify-center items-center h-[100vh]">
